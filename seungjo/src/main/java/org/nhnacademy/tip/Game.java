@@ -22,7 +22,7 @@ public class Game extends JFrame {
         add(world);
 
         world.setInterval(20);
-        world.addEffect(new Vector(2, -90, 1, 1));
+        world.addEffect(new Vector(2, -90, 0, 0));
 
         Box hazard = new Box(new Point(world.getWidth() / 2, 10), world.getWidth(), 20, Color.DARK_GRAY);
         world.addHazard(hazard);
