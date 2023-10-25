@@ -1,1 +1,14 @@
-= Cannon-Game
+= 💣 Cannon-Game
+
+== 📚 교재 : https://nhnacademy.dooray.com/share/pages/8M04JSaeR4uwtFWKDDbSdQ[NHN Dooray]
+
+
+== 🤦‍♂️MEMBER
+[cols="1,1,1,1,1"]
+|===
+|link:/jaehun[장재훈]
+|link:/damho[이담호]
+|link:/yongjun[유용준]
+|link:/seungjo[정승조]
+|link:/jeongwoo[이정우]
+|===
