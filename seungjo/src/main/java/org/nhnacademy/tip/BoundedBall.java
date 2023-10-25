@@ -2,6 +2,7 @@ package org.nhnacademy.tip;
 
 import java.awt.Color;
 import java.awt.Rectangle;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.event.EventListenerList;
@@ -15,7 +16,7 @@ public class BoundedBall extends MovableBall implements Bounded {
         super(location, radius, color);
 
         bounds = new Rectangle(Integer.MIN_VALUE / 2, Integer.MIN_VALUE / 2, Integer.MIN_VALUE, Integer.MIN_VALUE);
-        boundsList = new LinkedList<>();
+        boundsList = new ArrayList<>();
         listenerList = new EventListenerList();
     }
 

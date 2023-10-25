@@ -3,15 +3,19 @@ package org.nhnacademy.tip;
 public class Vector {
     int magnitude;
     int angle;
+    int gravity;
+    int wind;
     Point displacement;
 
     public Vector() {
-        this(0, 0);
+        this(0, 0, 0, 0);
     }
 
-    public Vector(int magnitude, int angle) {
+    public Vector(int magnitude, int angle, int gravity, int wind) {
         this.magnitude = magnitude;
         this.angle = angle;
+        this.gravity = gravity;
+        this.wind = wind;
         this.displacement = new Point(0, 0);
         updateDisplacementVector();
     }
@@ -30,6 +34,15 @@ public class Vector {
         return angle;
     }
 
+    public int getGravity() {
+        return gravity;
+    }
+
+    public int getWind() {
+        return wind;
+    }
+
+
     public Point getDisplacement() {
         return displacement;
     }
@@ -37,6 +50,8 @@ public class Vector {
     public Vector set(Vector other) {
         magnitude = other.getMagnitude();
         angle = other.getAngle();
+        gravity = other.getGravity();
+        wind = other.getWind();
         displacement.moveTo(other.displacement);
 
         return this;
@@ -84,8 +99,8 @@ public class Vector {
 
     protected void updateDisplacementVector() {
         displacement.moveTo(
-            (int) (magnitude * Math.cos(Math.toRadians(angle))),
-            (int) (magnitude * Math.sin(Math.toRadians(angle)))
+                (int) (magnitude * Math.cos(Math.toRadians(angle))) + (wind * 3),
+                (int) (magnitude * Math.sin(Math.toRadians(angle))) - (gravity * 4)
         );
     }
 

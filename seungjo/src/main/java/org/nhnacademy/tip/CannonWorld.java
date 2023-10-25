@@ -38,24 +38,35 @@ public class CannonWorld extends BoundedWorld {
         return cannon.getAngle();
     }
 
+    // TODO: 중력 설정
+    public void setGravity(int gravity) {
+        cannon.setGravity(gravity);
+    }
+
+    public int getGravity() {
+        return cannon.getGravity();
+    }
+
+    // TODO: 바람 설정
+    public void setWind(int wind) {
+        cannon.setWind(wind);
+    }
+
+    public int getWind() {
+        return cannon.getWind();
+    }
+
     public void fire() {
         BoundedBall ball1 = new BoundedBall(new Point(cannon.getMaxX() + 20, cannon.getMaxY() + 20), 20, Color.BLUE);
-        ball1.setMotion(new Vector(cannon.getMagnitude(), cannon.getAngle()));
+        ball1.setMotion(new Vector(cannon.getMagnitude(), cannon.getAngle(), cannon.getGravity(), cannon.getWind()));
         add(ball1);
     }
 
     public void clear() {
-//        for (Bounds bounds : boundsList) {
-//            if (bounds instanceof Movable) {
-//                cannon.setColor(Color.GREEN);
-//                boundsList.remove(bounds);
-//            }
-//        }
-
-
         for (int i = 0; i < boundsList.size(); i++) {
             if (boundsList.get(i) instanceof Movable) {
                 cannon.setColor(Color.GREEN);
+                ((Movable) boundsList.get(i)).stop();
                 boundsList.remove(i);
                 break;
             }

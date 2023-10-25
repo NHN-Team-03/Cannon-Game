@@ -42,7 +42,7 @@ public class Point implements Cloneable {
 
     /**
      * 주어진 변위량 만큼 이동
-     *
+     * 중력과 바람의 영향을 받는다.
      * @param displacement 변위량
      * @return
      */

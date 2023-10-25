@@ -38,7 +38,9 @@ public class MovableBall extends Ball implements Movable {
     }
 
     public void addEffect(Vector effect) {
-        effectList.add(effect);
+        if (effect != null) {
+            effectList.add(effect);
+        }
     }
 
     public void next() {

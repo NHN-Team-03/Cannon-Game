@@ -9,6 +9,8 @@ public class Cannon extends Bounds implements Drawable {
     Color color;
     int magnitude;
     int angle;
+    int gravity;
+    int wind;
 
     public Cannon(Point location, int width, int height, Color color) {
         super(location, width, height);
@@ -16,6 +18,8 @@ public class Cannon extends Bounds implements Drawable {
         this.color = color;
         this.magnitude = 20;
         this.angle = 40;
+        this.gravity = 1;
+        this.wind = 1;
     }
 
     public int getMagnitude() {
@@ -32,6 +36,22 @@ public class Cannon extends Bounds implements Drawable {
 
     public void setAngle(int angle) {
         this.angle = angle;
+    }
+
+    public int getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(int gravity) {
+        this.gravity = gravity;
+    }
+
+    public int getWind() {
+        return wind;
+    }
+
+    public void setWind(int wind) {
+        this.wind = wind;
     }
 
     public void setColor(Color color) {
